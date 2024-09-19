@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google"
+import { Open_Sans } from "next/font/google"
 import "./globals.css";
+import Header from "@/components/Header";
 
-const inter = Inter({ subsets: ["latin"] })
+const open_Sans = Open_Sans({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
   title: "VivazPratas",
@@ -16,10 +17,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={open_Sans.className}>
         <div className="h-full flex flex-col">
+          {/* <Header /> */}
           <div>{children}</div>
-          {/* footer */}
         </div>
       </body>
     </html>

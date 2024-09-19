@@ -1,0 +1,1 @@
+1 => Criar componente SheetContent para posteriormente filtrar joias por categorias
