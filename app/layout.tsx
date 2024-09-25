@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Open_Sans } from "next/font/google"
 import "./globals.css";
 import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 
 const open_Sans = Open_Sans({ subsets: ["latin"] })
 
@@ -19,8 +20,10 @@ export default function RootLayout({
     <html lang="en">
       <body className={open_Sans.className}>
         <div className="h-full flex flex-col">
-          {/* <Header /> */}
-          <div>{children}</div>
+          <div className="flex-1">
+            {children}
+          </div>
+          <Footer />
         </div>
       </body>
     </html>

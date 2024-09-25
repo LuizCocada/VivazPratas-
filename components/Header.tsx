@@ -10,17 +10,17 @@ import InputSearch from "./InputSearch";
 
 const Header = () => {
     return (
-        <Card className="rounded-none border-none dark"> 
+        <Card className="rounded-none border-none">
             <CardContent className="p-5 items-center flex justify-between">
                 <Link href={"/"}>
                     <Image className="rounded-full " width={65} height={65} src={"/logo.png"} alt={"logo"} />
                 </Link>
                 <div className="flex-1 px-5">
-                    <InputSearch/>
+                    <InputSearch />
                 </div>
                 <Sheet>
                     <SheetTrigger asChild>
-                        <Button size={"icon"} variant={"outline"} className="border-none">
+                        <Button size={"icon"} variant={"link"} className="border-none">
                             <MenuIcon />
                         </Button>
                     </SheetTrigger>
