@@ -5,8 +5,7 @@ import { db } from "@/lib/prisma";
 
 const Home = async () => {
 
-  const categorys = await db.category.findMany({})
-
+  const category = await db.category.findMany({})
 
   return (
     <>
@@ -22,7 +21,7 @@ const Home = async () => {
         </div>
 
         <div className="flex flex-col gap-4 pt-5">
-          {categorys.map((category) => (
+          {category.map((category) => (
             <CategoryItem key={category.id} category={category} />
           ))}
         </div>
