@@ -40,7 +40,7 @@ const InputSearch = () => {
                     render={({ field }) => (
                         <FormItem>
                             <FormControl>
-                                <Input className="border-x-0 border-t-0 bg-background border-none rounded-none rounded-l-lg"
+                                <Input className="border-x-0 border-t-0 bg-background border-none rounded-none rounded-l-lg min-w-full"
                                     placeholder="Buscar por produto"
                                     {...field}
                                 />

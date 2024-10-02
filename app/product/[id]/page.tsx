@@ -42,7 +42,7 @@ const ProductItemPage = async ({ params, searchParams }: ProductItemParams) => {
         }
     })
 
-    const ringSize = searchParams.ringsize//tamanho do anel //TODO ring Size só não aparecerá se a categoria for colar ou pulseiras.
+    const ringSize = searchParams.ringsize//tamanho do anel 
     const quantityProducts = searchParams.quantity//quantidade
 
     const messageWhatsApp = `
@@ -56,6 +56,10 @@ const ProductItemPage = async ({ params, searchParams }: ProductItemParams) => {
     Aguardo retorno para finalizar! Obrigado!
 `
 
+
+    const ringCategoryId = "cm18coqlh00006csvvhcmdspu" //aneis
+    const parOfRingCategoryId = "cm18corqq00056csvpo8x58we" //par de aliança
+    const allianceCategoryId = "cm18couj8000k6csv7b4tswxe" //aliança
 
 
 
@@ -98,10 +102,13 @@ const ProductItemPage = async ({ params, searchParams }: ProductItemParams) => {
                         </Button>
                     </div>
 
-                    <div className="mt-2 space-y-1">
-                        <p className="text-sm font-semibold px-1">Selecione o tamanho do aro*</p>
-                        <SelectRingSize />
-                    </div>
+                    {(product.category.id == ringCategoryId || product.category.id == parOfRingCategoryId || product.category.id == allianceCategoryId) && (
+                        <div className="mt-2 space-y-1">
+                            <p className="text-sm font-semibold px-1">Selecione o tamanho do aro*</p>
+                            <SelectRingSize />
+                        </div>
+                    )}
+
 
                     <div className="mt-2 space-y-1">
                         <p className="text-sm font-semibold px-1">Quantidade*</p>
