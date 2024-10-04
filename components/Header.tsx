@@ -20,7 +20,7 @@ const Header = () => {
                 </div>
                 <Sheet>
                     <SheetTrigger asChild>
-                        <Button size={"icon"} variant={"link"} className="border-none">
+                        <Button size={"icon"} variant={"link"} className="rounded-none">
                             <MenuIcon />
                         </Button>
                     </SheetTrigger>

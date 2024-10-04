@@ -34,24 +34,26 @@ const InputSearch = () => {
     return (
         <Form {...form}>
             <form onSubmit={form.handleSubmit(handleSubmit)} className="flex items-center">
-                <FormField
-                    control={form.control}
-                    name="title"
-                    render={({ field }) => (
-                        <FormItem>
-                            <FormControl>
-                                <Input className="border-x-0 border-t-0 bg-background border-none rounded-none rounded-l-lg min-w-full"
-                                    placeholder="Buscar por produto"
-                                    {...field}
-                                />
-                            </FormControl>
-                            <FormMessage />
-                        </FormItem>
-                    )}
-                />
-                <Button variant={"hovercard"} className="p-3">
-                    <SearchIcon />
-                </Button>
+                <div className="flex w-full">
+                    <FormField
+                        control={form.control}
+                        name="title"
+                        render={({ field }) => (
+                            <FormItem className="w-full">
+                                <FormControl> 
+                                    <Input className="border-x-0 border-t-0 bg-background border-none rounded-none rounded-l-lg "
+                                        placeholder="Buscar por produto"
+                                        {...field}
+                                    />
+                                </FormControl>
+                                <FormMessage />
+                            </FormItem>
+                        )}
+                    />
+                    <Button variant={"hovercard"} className="p-3 rounded-l-none">
+                        <SearchIcon />
+                    </Button>
+                </div>
             </form>
         </Form>
     );

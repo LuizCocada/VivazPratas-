@@ -1,11 +1,11 @@
+import { GetCategory } from "@/server/actions/get-category";
 import CategoryItem from "@/components/CategoryItem";
 import Header from "@/components/Header";
-import InputSearch from "@/components/InputSearch";
 import { db } from "@/lib/prisma";
 
 const Home = async () => {
 
-  const category = await db.category.findMany({})
+  const category = await GetCategory()
 
   return (
     <>

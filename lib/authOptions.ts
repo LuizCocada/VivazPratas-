@@ -13,7 +13,6 @@ export const authOptions: AuthOptions = {
         const isValid =
           credentials?.username === process.env.ADMIN_USERNAME &&
           credentials?.password === process.env.ADMIN_PASSWORD;
-          console.log(isValid)
         if (isValid) {
           return { id: "1", name: process.env.ADMIN_USERNAME };
         }

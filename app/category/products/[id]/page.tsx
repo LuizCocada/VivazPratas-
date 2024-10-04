@@ -1,9 +1,7 @@
 import Header from "@/components/Header";
 import ProductItem from "@/components/ProductItem";
-import { Card, CardContent } from "@/components/ui/card";
 import { db } from "@/lib/prisma";
 import { ChevronLeftIcon } from "lucide-react";
-import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
