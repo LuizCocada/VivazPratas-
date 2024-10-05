@@ -40,11 +40,18 @@ const AdminPage = () => {
               <SheetTitle className="border-b border-black">Menu de gerenciamento</SheetTitle>
             </SheetHeader>
 
-            <div className="p-5">
+            <div className="p-5 space-y-3">
               <SheetClose asChild>
                 <Button asChild>
                   <Link href={"/admin/create_category"} className="w-full">
                     Criar Categoria
+                  </Link>
+                </Button>
+              </SheetClose>
+              <SheetClose asChild>
+                <Button asChild>
+                  <Link href={"/admin/delete_category"} className="w-full">
+                    Deletar Categoria
                   </Link>
                 </Button>
               </SheetClose>

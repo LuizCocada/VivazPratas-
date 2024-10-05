@@ -7,12 +7,18 @@ import { useState } from "react"
 
 
 
-const create_category = () => {
+const create_categoryPage = () => {
 
     const [category, setCategory] = useState('')
     const [image, setImage] = useState('')
 
     const handleCreateCategory = async () => {
+
+        if (!category || !image) {
+            alert("Preencha todos os campos")
+            return
+        }
+
         try {
             await createCategory({
                 name: category,
@@ -74,7 +80,7 @@ const create_category = () => {
 
 }
 
-export default create_category
+export default create_categoryPage
 
 
 
