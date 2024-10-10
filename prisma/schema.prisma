@@ -26,12 +26,12 @@ model Category {
 
 model Product {
   id          String   @id @default(cuid())
-  name        String
-  Description String?
-  price       Decimal  @db.Decimal(10, 2)
-  imageUrl    String
+  name        String //passa
+  Description String? //passa
+  price       Decimal  @db.Decimal(10, 2) //passa 
+  imageUrl    String //passa  
   category    Category @relation(fields: [categoryId], references: [id], onDelete: Cascade)
-  categoryId  String
+  categoryId  String //passa  
   createdAt   DateTime @default(now())
   updatedAt   DateTime @updatedAt
 

@@ -13,7 +13,7 @@ const CategoryItem = ({ category }: CategoryItemProps) => {
             <Card className="min-w-[160px]">
                 <CardContent className="p-0">
                     <div className="relative h-[200px] w-full">
-                        <Image className="object-cover rounded-t-xl" src={"/joia.png"} fill alt={`foto referente à ${category.name}`} />
+                        <Image className="object-cover rounded-t-xl" src={category.imageUrl} fill alt={`foto referente à ${category.name}`} />
                     </div>
 
                     <div className="flex justify-center p-2">

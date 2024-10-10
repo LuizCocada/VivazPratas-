@@ -78,7 +78,7 @@ const ProductItemPage = async ({ params, searchParams }: ProductItemParams) => {
 
             <div className="pt-2 pb-5">
                 <div className="relative h-[300px] w-full">
-                    <Image className="object-cover" src={"/joia.png"} fill alt={`foto referente à ${product.name}`} />
+                    <Image className="object-cover" src={product.imageUrl} fill alt={`foto referente à ${product.name}`} />
                 </div>
             </div>
 

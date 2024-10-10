@@ -1,10 +1,9 @@
 "use server"
 
-
-
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/lib/authOptions";
 import { db } from "@/lib/prisma";
+import { revalidatePath } from "next/cache";
 
 interface CreateCategoryParams {
   name: string;
@@ -12,6 +11,7 @@ interface CreateCategoryParams {
 }
 
 export const createCategory = async (params: CreateCategoryParams) => {
+
   const user = await getServerSession(authOptions);
 
   if (!user) {
@@ -23,6 +23,7 @@ export const createCategory = async (params: CreateCategoryParams) => {
       name: params.name,
       imageUrl: params.imageUrl,
     },
-  });
-
+  })
+  revalidatePath("/admin/create_category")
+  revalidatePath("/admin/delete_category")//pode quebrar a aplicação
 };

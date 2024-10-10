@@ -1,10 +1,10 @@
 'use client'
 
 import { Button } from "@/components/ui/button"
-import { createCategory } from "@/server/actions/create-category"
+import { createCategory } from "@/actions/create-category"
+import { toast } from "sonner"
 import Link from "next/link"
 import { useState } from "react"
-
 
 
 const create_categoryPage = () => {
@@ -12,21 +12,29 @@ const create_categoryPage = () => {
     const [category, setCategory] = useState('')
     const [image, setImage] = useState('')
 
-    const handleCreateCategory = async () => {
-
-        if (!category || !image) {
-            alert("Preencha todos os campos")
-            return
-        }
+    const handleCreateCategory = async (event: React.FormEvent) => {
+        event.preventDefault() //botao nao recarrega a pagina impedindo o envio do form
 
         try {
+
+            if (!category || !image) {
+                alert("Preencha todos os campos")
+                return
+            }
+
             await createCategory({
                 name: category,
                 imageUrl: image
             })
+
+            setCategory('')
+            setImage('')
+
+            toast.success("Categoria criada com sucesso")
         }
         catch (error) {
-            console.log(error, "error ao criar categoria")
+            console.log(error)
+            toast.error("Error ao criar Categoria")
         }
     }
 
@@ -44,7 +52,7 @@ const create_categoryPage = () => {
             </div>
 
             <div className="p-5">
-                <form className="flex flex-col gap-4">
+                <form className="flex flex-col gap-4" onSubmit={handleCreateCategory}>
                     <div className="flex flex-col gap-2">
                         <label htmlFor="category">Categoria</label>
                         <input type="text"
@@ -70,7 +78,7 @@ const create_categoryPage = () => {
                     </div>
 
                     <div className="flex flex-col gap-2">
-                        <button className="p-2 bg-black text-white rounded" onClick={(handleCreateCategory)}>Criar</button>
+                        <button type="submit" className="p-2 bg-black text-white rounded">Criar</button>
                     </div>
                 </form>
             </div>

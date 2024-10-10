@@ -3,8 +3,14 @@ const nextConfig = {
     images: {
         remotePatterns: [
             {
-                hostname: "via.placeholder.com",
+                hostname: "aliancasgouveia.com.br",
             },
+            {
+                hostname: "imageurldeteste",
+            },
+            {
+                hostname: "www.aquajoias.com.br",
+            }
         ],
     },
 };

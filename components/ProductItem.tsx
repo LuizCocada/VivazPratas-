@@ -15,7 +15,7 @@ const ProductItem = ({ product }: ProductItemProps) => {
             <Card className="min-w-[160px]">
                 <CardContent className="p-0">
                     <div className="relative h-[159px] w-full">
-                        <Image className="object-cover rounded-xl" src={"/joia.png"} fill alt={`foto referente à ${product?.name}`} />
+                        <Image className="object-cover rounded-xl" src={product.imageUrl} fill alt={`foto referente à ${product?.name}`} />
                     </div>
 
                     <div className="pl-2">
