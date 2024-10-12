@@ -1,7 +1,8 @@
-import AddCategoryItem from "@/components/AddCategoryItem";
+
 import { Button } from "@/components/ui/button";
 import { GetCategory } from "@/actions/get-category";
 import Link from "next/link";
+import AdmDeleteProductCategoryItem from "@/components/AdmDeleteProductCategoryItem";
 
 const add_productPage = async () => {
 
@@ -22,13 +23,13 @@ const add_productPage = async () => {
 
             <div className="px-5 pt-3">
                 <p>
-                    Escolha à categoria que deseja adicionar o <strong>produto</strong>
+                    Escolha à categoria que deseja remover o <strong>produto</strong>
                 </p>
             </div>
 
             <div className="p-5 grid grid-cols-2 gap-5">
                 {categorys.map((category) => (
-                    <AddCategoryItem key={category.id} category={category} />
+                    <AdmDeleteProductCategoryItem key={category.id} category={category} />
                 ))}
             </div>
         </div>

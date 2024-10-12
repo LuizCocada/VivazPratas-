@@ -6,11 +6,8 @@ const nextConfig = {
                 hostname: "aliancasgouveia.com.br",
             },
             {
-                hostname: "imageurldeteste",
-            },
-            {
                 hostname: "www.aquajoias.com.br",
-            }
+            },
         ],
     },
 };

@@ -1,15 +1,14 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Category } from "@prisma/client";
-import Image from "next/image";
 import Link from "next/link";
 
 interface CategoryItemProps {
     category: Category
 }
 
-const AddCategoryItem = ({ category }: CategoryItemProps) => {
+const AdmDeleteProductCategoryItem = ({ category }: CategoryItemProps) => {
     return (
-        <Link href={`/admin/add_product/${category.id}`}>
+        <Link href={`/admin/delete_product/${category.id}`}>
             <Card className="min-w-[160px]">
                 <CardContent className="p-10">
                     <div className="flex justify-center p-2">
@@ -21,4 +20,4 @@ const AddCategoryItem = ({ category }: CategoryItemProps) => {
     );
 }
 
-export default AddCategoryItem;
+export default AdmDeleteProductCategoryItem;

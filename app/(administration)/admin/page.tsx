@@ -74,6 +74,14 @@ const AdminPage = () => {
                 </Button>
               </SheetClose>
 
+              <SheetClose asChild>
+                <Button asChild>
+                  <Link href={"/admin/delete_product"} className="w-full font-semibold">
+                    Remover Produto
+                  </Link>
+                </Button>
+              </SheetClose>
+
             </div>
 
           </SheetContent>
