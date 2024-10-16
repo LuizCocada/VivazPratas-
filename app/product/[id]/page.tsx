@@ -9,6 +9,7 @@ import Link from "next/link";
 import SelectRingSize from "@/components/SelectRingSize";
 import { priceWithporcentage } from "@/constants/priceWithPorcentage";
 import NumberOfProducts from "@/components/NumberOfProducts";
+import Decimal from "decimal.js";
 
 
 interface ProductItemParams {
@@ -56,6 +57,9 @@ const ProductItemPage = async ({ params, searchParams }: ProductItemParams) => {
     Aguardo retorno para finalizar! Obrigado!
 `
 
+    const priceNumber = new Decimal(product.price).toNumber();
+    const priceDecimalToString = priceNumber.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+
 
     const ringCategoryId = "cm18coqlh00006csvvhcmdspu" //aneis
     const parOfRingCategoryId = "cm18corqq00056csvpo8x58we" //par de aliança
@@ -91,7 +95,7 @@ const ProductItemPage = async ({ params, searchParams }: ProductItemParams) => {
                     <div className="flex justify-between items-center mb-5">
                         <div>
                             <p className="text-3xl font-semibold mt-2 underline">
-                                R${product.price.toNumber()}
+                                {priceDecimalToString}
                             </p>
                             <p>Em até 10x de R${priceWithpercentagePerInstallment}</p>
                         </div>

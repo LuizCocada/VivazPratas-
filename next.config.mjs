@@ -2,11 +2,8 @@
 const nextConfig = {
     images: {
         remotePatterns: [
-            {
-                hostname: "aliancasgouveia.com.br",
-            },
-            {
-                hostname: "www.aquajoias.com.br",
+            {   
+                hostname: "lh3.googleusercontent.com"
             },
         ],
     },

@@ -1,7 +1,12 @@
+'use client'
+
 import Image from "next/image";
 import { Card, CardContent } from "./ui/card";
 import { Product } from "@prisma/client";
-import Link from "next/link";
+import { AlertDialog, AlertDialogAction, AlertDialogCancel, AlertDialogContent, AlertDialogDescription, AlertDialogFooter, AlertDialogHeader, AlertDialogTitle, AlertDialogTrigger } from "./ui/alert-dialog";
+import { Button } from "./ui/button";
+import { deleteProduct } from "@/actions/delete-product";
+import { toast } from "sonner";
 
 
 interface ProductItemProps {
@@ -9,21 +14,55 @@ interface ProductItemProps {
 }
 
 const DeleteProductItem = ({ product }: ProductItemProps) => {
-    return (
-        <Link href={`/admin/delete_product/delete_action_page/${product.id}`}>
-            <Card className="min-w-[160px]">
-                <CardContent className="p-0">
-                    <div className="relative h-[159px] w-full">
-                        <Image className="object-cover rounded-xl" src={product.imageUrl} fill alt={`foto referente à ${product?.name}`} />
-                    </div>
 
-                    <div className="pl-2">
-                        <h3 className="font-semibold truncate">{product?.name}</h3>
-                        <p className="text-sm font-semibold">R$ {product?.price.toNumber()}</p>
-                    </div>
-                </CardContent>
-            </Card>
-        </Link>
+
+    const handleRemoveProduct = async () => {
+        try {
+            await deleteProduct(product.id);
+            toast.success('Produto removido com sucesso');
+        }
+        catch (error) {
+            console.error(error);
+            toast.error('Erro ao remover produto');
+        }
+    }
+
+
+    return (
+        <>
+            <AlertDialog>
+                <AlertDialogTrigger asChild>
+                    <Card className="min-w-[160px] cursor-pointer">
+                        <CardContent className="p-0">
+                            <div className="relative h-[159px] w-full">
+                                <Image className="object-cover rounded-xl" src={product.imageUrl} fill alt={`foto referente à ${product?.name}`} />
+                            </div>
+
+                            <div className="pl-2">
+                                <h3 className="font-semibold truncate">{product?.name}</h3>
+                                <p className="text-sm font-semibold">R$ {parseFloat(product?.price.toString())}</p>
+                            </div>
+                        </CardContent>
+                    </Card>
+                </AlertDialogTrigger>
+                <AlertDialogContent>
+                    <AlertDialogHeader>
+                        <AlertDialogTitle>Deseja remover este produto?</AlertDialogTitle>
+                        <AlertDialogDescription>
+                            Esta ação não pode ser desfeita. Tem certeza que deseja remover o produto <strong>{product?.name}</strong>?
+                        </AlertDialogDescription>
+                    </AlertDialogHeader>
+                    <AlertDialogFooter>
+                        <AlertDialogCancel>Cancelar</AlertDialogCancel>
+                        <AlertDialogAction asChild>
+                            <Button onClick={handleRemoveProduct}>
+                                Remover
+                            </Button>
+                        </AlertDialogAction>
+                    </AlertDialogFooter>
+                </AlertDialogContent>
+            </AlertDialog>
+        </>
     );
 }
 
