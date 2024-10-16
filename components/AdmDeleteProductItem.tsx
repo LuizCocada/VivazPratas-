@@ -7,6 +7,8 @@ import { AlertDialog, AlertDialogAction, AlertDialogCancel, AlertDialogContent, 
 import { Button } from "./ui/button";
 import { deleteProduct } from "@/actions/delete-product";
 import { toast } from "sonner";
+import Decimal from "decimal.js"; 
+
 
 
 interface ProductItemProps {
@@ -14,7 +16,6 @@ interface ProductItemProps {
 }
 
 const DeleteProductItem = ({ product }: ProductItemProps) => {
-
 
     const handleRemoveProduct = async () => {
         try {
@@ -27,7 +28,9 @@ const DeleteProductItem = ({ product }: ProductItemProps) => {
         }
     }
 
-
+    const priceNumber = new Decimal(product.price).toNumber();
+    const priceString = priceNumber.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+    
     return (
         <>
             <AlertDialog>
@@ -40,7 +43,7 @@ const DeleteProductItem = ({ product }: ProductItemProps) => {
 
                             <div className="pl-2">
                                 <h3 className="font-semibold truncate">{product?.name}</h3>
-                                <p className="text-sm font-semibold">R$ {parseFloat(product?.price.toString())}</p>
+                                <p className="text-sm font-semibold">{priceString}</p>
                             </div>
                         </CardContent>
                     </Card>
