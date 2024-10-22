@@ -10,7 +10,7 @@ interface CounterProps {
     maxValue?: number;
 }
 
-const NumberOfProducts: React.FC<CounterProps> = ({ minValue = 0, maxValue = 10 }) => {
+const NumberOfProducts: React.FC<CounterProps> = ({ minValue = 1, maxValue = 10 }) => {
 
     const router = useRouter()
 
@@ -35,7 +35,7 @@ const NumberOfProducts: React.FC<CounterProps> = ({ minValue = 0, maxValue = 10 
     };
 
     return (
-        <div className='border flex justify-center mt-2 w-[100%] m-auto'>
+        <div className='border rounded-lg flex justify-center mt-2 w-[100%] m-auto'>
             <Button className='rounded-md w-full text-lg' onClick={decrement} disabled={count <= minValue}>
                 -
             </Button>

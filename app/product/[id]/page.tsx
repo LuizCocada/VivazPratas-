@@ -22,7 +22,6 @@ interface ProductItemParams {
     }
 }
 
-
 const ProductItemPage = async ({ params, searchParams }: ProductItemParams) => {
 
     const product = await db.product.findFirstOrThrow({
@@ -46,7 +45,7 @@ const ProductItemPage = async ({ params, searchParams }: ProductItemParams) => {
     const ringSize = searchParams.ringsize//tamanho do anel 
     const quantityProducts = searchParams.quantity//quantidade
 
-    const messageWhatsApp = `
+    const messageWithRingSizeWhatsApp = `
     Olá, Gabriel, Gostaria de concluir minha compra! 😊
 
     *Produto*: ${product.name}
@@ -57,18 +56,27 @@ const ProductItemPage = async ({ params, searchParams }: ProductItemParams) => {
     Aguardo retorno para finalizar! Obrigado!
 `
 
+    const messageNoRingSizeWhatsApp = `
+Olá, Gabriel, Gostaria de concluir minha compra! 😊
+
+*Produto*: ${product.name}
+*visualizar Imagem*: https://2448.cdn.simplo7.net/static/2448/sku/trabalhadas-alianca-de-noivado-e-casamento-com-3-gramas-a-unidade-rendeira-mod0063-p-1704477255866.jpeg
+*Quantidade*: Quantidade: ${quantityProducts}
+
+Aguardo retorno para finalizar! Obrigado!
+`
+
     const priceNumber = new Decimal(product.price).toNumber();
     const priceDecimalToString = priceNumber.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
 
 
-    const ringCategoryId = "cm18coqlh00006csvvhcmdspu" //aneis
-    const parOfRingCategoryId = "cm18corqq00056csvpo8x58we" //par de aliança
-    const allianceCategoryId = "cm18couj8000k6csv7b4tswxe" //aliança
+    const parOfRingCategoryId = "cm2jsa03p0002b9ohw7i5x88k" //Par de Alianças
+    const SolitaryRingCategoryId = "cm2jsaqxm0003b9ohux2n8aic" //Anéis Solitários
 
 
 
-    return ( //caso de merda colocar isso no classname min-h-screen
-        <div className="flex flex-col min-h-screen">
+    return (
+        <div className="flex flex-col">
             <Header />
 
             <div className="w-fit flex px-2 pt-3 pb-2">
@@ -86,7 +94,7 @@ const ProductItemPage = async ({ params, searchParams }: ProductItemParams) => {
                 </div>
             </div>
 
-            <Card className="bg-card flex rounded-b-none flex-1">
+            <Card className="bg-card flex rounded-2xl flex-1">
                 <CardContent className="w-full py-3 ">
                     <h2 className="text-xl font-semibold break-words w-full">
                         {product.Description}
@@ -106,7 +114,7 @@ const ProductItemPage = async ({ params, searchParams }: ProductItemParams) => {
                         </Button>
                     </div>
 
-                    {(product.category.id == ringCategoryId || product.category.id == parOfRingCategoryId || product.category.id == allianceCategoryId) && (
+                    {(product.category.id == SolitaryRingCategoryId || product.category.id == parOfRingCategoryId) && (
                         <div className="mt-2 space-y-1">
                             <p className="text-sm font-semibold px-1">Selecione o tamanho do aro*</p>
                             <SelectRingSize />
@@ -120,10 +128,10 @@ const ProductItemPage = async ({ params, searchParams }: ProductItemParams) => {
                     </div>
 
                     <Link
-                        href={`https://wa.me/5585996955587?text=${encodeURIComponent(messageWhatsApp)}`}
+                        href={`https://wa.me/5585999295393?text=${encodeURIComponent(ringSize ? messageWithRingSizeWhatsApp : messageNoRingSizeWhatsApp)}`}
                         target="_blank"
                     >
-                        <Button className="rounded-lg mt-5 w-full p-5 py-6 text-lg font-semibold">
+                        <Button disabled={(product.category.id === SolitaryRingCategoryId || product.category.id === parOfRingCategoryId) && !ringSize} className="rounded-lg mt-5 w-full p-5 py-6 text-lg font-semibold">
                             Comprar
                         </Button>
                     </Link>
