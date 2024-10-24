@@ -96,7 +96,7 @@ Aguardo retorno para finalizar! Obrigado!
 
             <Card className="bg-card flex rounded-2xl flex-1">
                 <CardContent className="w-full py-3 ">
-                    <h2 className="text-xl font-semibold break-words w-full">
+                    <h2 className="text-xl font-medium break-words w-full font-playfairDisplay">
                         {product.Description}
                     </h2>
 
@@ -131,7 +131,8 @@ Aguardo retorno para finalizar! Obrigado!
                         href={`https://wa.me/5585999295393?text=${encodeURIComponent(ringSize ? messageWithRingSizeWhatsApp : messageNoRingSizeWhatsApp)}`}
                         target="_blank"
                     >
-                        <Button disabled={(product.category.id === SolitaryRingCategoryId || product.category.id === parOfRingCategoryId) && !ringSize} className="rounded-lg mt-5 w-full p-5 py-6 text-lg font-semibold">
+                        <Button disabled={(product.category.id === SolitaryRingCategoryId || product.category.id === parOfRingCategoryId) && !ringSize}
+                            className="rounded-lg mt-5 w-full p-5 py-6 text-lg font-semibold">
                             Comprar
                         </Button>
                     </Link>

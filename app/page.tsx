@@ -17,10 +17,10 @@ const Home = async () => {
 
       <div className="px-5 pb-10">
         <div className="flex justify-center pt-5">
-          <h2 className="text-3xl font-semibold">CATEGORIAS</h2>
+          <h2 className="text-3xl font-semibold font-playfairDisplay">CATEGORIAS</h2>
         </div>
 
-        <div className="flex flex-col gap-4 pt-5">
+        <div className="flex flex-col gap-4 pt-5 font-playfairDisplay">
           {category.map((category) => (
             <CategoryItem key={category.id} category={category} />
           ))}

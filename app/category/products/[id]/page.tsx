@@ -39,7 +39,7 @@ const ProductPage = async ({ params }: ProductPageParams) => {
                 <p className="text-gray-600 text-sm">&nbsp;Início</p>
             </div>
             <div className="flex justify-center items-center mt-5">
-                <h2 className="text-3xl font-semibold border-b-2">
+                <h2 className="text-3xl font-semibold border-b-2 font-playfairDisplay">
                     {category?.name}
                 </h2>
             </div >

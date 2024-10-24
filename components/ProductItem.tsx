@@ -23,7 +23,7 @@ const ProductItem = ({ product }: ProductItemProps) => {
                     </div>
 
                     <div className="pl-2">
-                        <h3 className="font-semibold truncate">{product?.name}</h3>
+                        <h3 className="font-medium truncate font-playfairDisplay">{product?.name}</h3>
                         <p className="text-sm font-semibold">
                             {priceDecimalToString}
                         </p>
