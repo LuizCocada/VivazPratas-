@@ -12,7 +12,7 @@ const Header = () => {
         <Card className="rounded-none border-none">
             <CardContent className="p-5 items-center flex justify-between">
                 <Link href={"/"}>
-                    <Image className="rounded-full " width={65} height={65} src={"/public/Logo.png"} alt={"logo"} />
+                    <Image className="rounded-full " width={65} height={65} src={"/Logo.png"} alt={"logo"} />
                 </Link>
                 <div className="flex-1 px-5">
                     <InputSearch />
