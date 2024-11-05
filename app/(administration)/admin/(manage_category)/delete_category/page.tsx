@@ -1,7 +1,7 @@
 import { GetCategory } from "@/actions/get-category";
 import DeleteCategoryItem from "@/components/DeleteCategoryItem";
 import { Button } from "@/components/ui/button";
-import { CircleSlash, Divide } from "lucide-react";
+import { CircleSlash } from "lucide-react";
 import Link from "next/link";
 
 

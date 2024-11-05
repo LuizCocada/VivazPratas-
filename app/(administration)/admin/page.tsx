@@ -1,6 +1,5 @@
 "use client";
 
-import MenuContent from "@/components/MenuContent";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetClose, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
 import { MenuIcon } from "lucide-react";

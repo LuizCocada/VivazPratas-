@@ -1,6 +1,5 @@
 import Image from "next/image";
 import { Card, CardContent } from "../components/ui/card";
-import { Input } from "../components/ui/input";
 import Link from "next/link";
 import { Sheet, SheetTrigger } from "@/components/ui/sheet";
 import { MenuIcon } from "lucide-react";

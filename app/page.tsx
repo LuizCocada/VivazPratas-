@@ -1,7 +1,6 @@
 import { GetCategory } from "@/actions/get-category";
 import CategoryItem from "@/components/CategoryItem";
 import Header from "@/components/Header";
-import { db } from "@/lib/prisma";
 
 const Home = async () => {
 

@@ -7,7 +7,7 @@ import Link from "next/link"
 import { useState } from "react"
 
 
-const create_categoryPage = () => {
+const Create_categoryPage = () => {
 
     const [category, setCategory] = useState('')
     const [image, setImage] = useState('')
@@ -88,7 +88,7 @@ const create_categoryPage = () => {
 
 }
 
-export default create_categoryPage
+export default Create_categoryPage
 
 
 

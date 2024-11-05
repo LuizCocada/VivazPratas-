@@ -1,7 +1,6 @@
 "use client"
 import { addProduct } from "@/actions/add-product";
 import { Button } from "@/components/ui/button";
-import { db } from "@/lib/prisma";
 import Link from "next/link";
 import { useState } from "react";
 import { toast } from "sonner";
@@ -12,7 +11,7 @@ interface add_productActionPageParams {
     }
 }
 
-const add_productActionPage = ({ params }: add_productActionPageParams) => {
+const Add_productActionPage = ({ params }: add_productActionPageParams) => {
 
     const [name, setName] = useState("");
     const [description, setDescription] = useState("");
@@ -123,4 +122,4 @@ const add_productActionPage = ({ params }: add_productActionPageParams) => {
 
 
 
-export default add_productActionPage;
+export default Add_productActionPage;

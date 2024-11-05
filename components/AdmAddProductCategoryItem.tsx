@@ -1,6 +1,5 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Category } from "@prisma/client";
-import Image from "next/image";
 import Link from "next/link";
 
 interface CategoryItemProps {
