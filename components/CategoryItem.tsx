@@ -9,7 +9,7 @@ interface CategoryItemProps {
 
 const CategoryItem = ({ category }: CategoryItemProps) => {
     return (
-        <Link href={`/category/products/${category.id}`}>
+        <Link href={`/category/products/${category.id}`} passHref>
             <Card className="min-w-[160px]">
                 <CardContent className="p-0">
                     <div className="relative h-[200px] w-full">

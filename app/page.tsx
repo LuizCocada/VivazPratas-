@@ -9,7 +9,7 @@ const Home = async () => {
   return (
     <>
       <Header />
-      {/* futuramente foto demonsrativa */}
+      {/* foto Banner*/}
       <div className="px-2 pt-5">
         <p className="text-sm font-semibold">Seja bem vindo à <strong>Vivaz Pratas</strong>!</p>
       </div>

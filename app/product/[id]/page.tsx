@@ -49,7 +49,7 @@ const ProductItemPage = async ({ params, searchParams }: ProductItemParams) => {
     Olá, Gabriel, Gostaria de concluir minha compra! 😊
 
     *Produto*: ${product.name}
-    *visualizar Imagem*: https://2448.cdn.simplo7.net/static/2448/sku/trabalhadas-alianca-de-noivado-e-casamento-com-3-gramas-a-unidade-rendeira-mod0063-p-1704477255866.jpeg
+    *visualizar Imagem*: ${product.imageUrl}
     *Especificações da joia*: ${ringSize}
     *Quantidade*: Quantidade: ${quantityProducts}
     
@@ -60,7 +60,7 @@ const ProductItemPage = async ({ params, searchParams }: ProductItemParams) => {
 Olá, Gabriel, Gostaria de concluir minha compra! 😊
 
 *Produto*: ${product.name}
-*visualizar Imagem*: https://2448.cdn.simplo7.net/static/2448/sku/trabalhadas-alianca-de-noivado-e-casamento-com-3-gramas-a-unidade-rendeira-mod0063-p-1704477255866.jpeg
+*visualizar Imagem*: ${product.imageUrl}
 *Quantidade*: Quantidade: ${quantityProducts}
 
 Aguardo retorno para finalizar! Obrigado!
@@ -105,7 +105,7 @@ Aguardo retorno para finalizar! Obrigado!
                             <p className="text-3xl font-semibold mt-2 underline">
                                 {priceDecimalToString}
                             </p>
-                            <p>Em até 10x de R${priceWithpercentagePerInstallment}</p>
+                            <p>Em até 5x de R${priceWithpercentagePerInstallment}</p>
                         </div>
 
                         <Button className="rounded-md flex gap-2 items-center">
@@ -128,7 +128,7 @@ Aguardo retorno para finalizar! Obrigado!
                     </div>
 
                     <Link
-                        href={`https://wa.me/5585999295393?text=${encodeURIComponent(ringSize ? messageWithRingSizeWhatsApp : messageNoRingSizeWhatsApp)}`}
+                        href={`https://wa.me/5585988332945?text=${encodeURIComponent(ringSize ? messageWithRingSizeWhatsApp : messageNoRingSizeWhatsApp)}`}
                         target="_blank"
                     >
                         <Button disabled={(product.category.id === SolitaryRingCategoryId || product.category.id === parOfRingCategoryId) && !ringSize}
