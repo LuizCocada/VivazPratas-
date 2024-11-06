@@ -82,8 +82,8 @@ Aguardo retorno para finalizar! Obrigado!
             <div className="w-fit flex px-2 pt-3 pb-2">
                 <Link className="flex items-center" href={`/category/products/${product.category.id}`}>
                     <ChevronLeftIcon size={18} />
-                    <p className="text-sm font-semibold">Voltar&nbsp;</p>
-                    <p className="text-gray-600 text-sm">/</p>
+                    <p className="text-sm font-semibold">Voltar</p>
+                    <p className="text-gray-600 text-sm">&nbsp;/&nbsp;</p>
                 </Link>
                 <p className="text-gray-600 text-sm">{product.category.name}/{product.name}</p>
             </div>

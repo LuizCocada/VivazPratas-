@@ -16,7 +16,7 @@ const ProductItem = ({ product }: ProductItemProps) => {
 
     return (
         <Link href={`/product/${product.id}`}>
-            <Card className="min-w-[160px]">
+            <Card className="min-w-[160px] transition-transform duration-300 ease-in-out transform hover:scale-95">
                 <CardContent className="p-0">
                     <div className="relative h-[159px] w-full">
                         <Image className="object-cover rounded-xl" src={product.imageUrl} fill alt={`foto referente à ${product?.name}`} />

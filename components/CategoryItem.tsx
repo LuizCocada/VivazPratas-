@@ -10,10 +10,15 @@ interface CategoryItemProps {
 const CategoryItem = ({ category }: CategoryItemProps) => {
     return (
         <Link href={`/category/products/${category.id}`} passHref>
-            <Card className="min-w-[160px]">
+            <Card className="min-w-[160px] transition-transform duration-300 ease-in-out transform hover:scale-95">
                 <CardContent className="p-0">
                     <div className="relative h-[200px] w-full">
-                        <Image className="object-cover rounded-t-xl" src={category.imageUrl} fill alt={`foto referente à ${category.name}`} />
+                        <Image
+                            className="object-cover rounded-t-xl "
+                            src={category.imageUrl}
+                            fill
+                            alt={`foto referente à ${category.name}`}
+                        />
                     </div>
 
                     <div className="flex justify-center p-2">
@@ -26,3 +31,5 @@ const CategoryItem = ({ category }: CategoryItemProps) => {
 }
 
 export default CategoryItem;
+
+

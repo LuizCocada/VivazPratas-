@@ -29,7 +29,7 @@ const CategoryPage = async ({ searchParams }: CategoryPageProps) => {
                 <Link className="flex items-center" href={"/"}>
                     <ChevronLeftIcon size={18} />
                     <p className="text-sm font-semibold">Voltar</p>
-                    <p className="text-gray-600 text-sm">/</p>
+                    <p className="text-gray-600 text-sm">&nbsp;/</p>
                 </Link>
                 <p className="text-gray-600 text-sm">&nbsp;Início</p>
             </div>
