@@ -128,7 +128,7 @@ Aguardo retorno para finalizar! Obrigado!
                     </div>
 
                     <Link
-                        href={`https://wa.me/5585988332945?text=${encodeURIComponent(ringSize ? messageWithRingSizeWhatsApp : messageNoRingSizeWhatsApp)}`}
+                        href={`https://wa.me/5585994517813?text=${encodeURIComponent(ringSize ? messageWithRingSizeWhatsApp : messageNoRingSizeWhatsApp)}`}
                         target="_blank"
                     >
                         <Button disabled={(product.category.id === SolitaryRingCategoryId || product.category.id === parOfRingCategoryId) && !ringSize}
