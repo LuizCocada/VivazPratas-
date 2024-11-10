@@ -123,7 +123,7 @@ Aguardo retorno para finalizar! Obrigado!
                                 <p className="text-3xl font-semibold mt-2 underline">
                                     {priceDecimalToString}
                                 </p>
-                                <p>Em até 5x de R${priceWithpercentagePerInstallment}</p>
+                                <p>Em até 10x de R${priceWithpercentagePerInstallment}</p>
                             </div>
 
                             <Button className="rounded-md flex gap-2 items-center">
