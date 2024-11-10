@@ -3,7 +3,7 @@ import Header from "@/components/Header";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardTitle } from "@/components/ui/card";
 import { db } from "@/lib/prisma";
-import { Car, ChevronLeftIcon, RulerIcon } from "lucide-react";
+import { ChevronLeftIcon, RulerIcon } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import SelectRingSize from "@/components/SelectRingSize";
