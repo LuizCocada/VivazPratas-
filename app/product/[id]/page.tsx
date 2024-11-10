@@ -45,7 +45,7 @@ const ProductItemPage = async ({ params, searchParams }: ProductItemParams) => {
         props: {
             price: product.price.toNumber(), //preco do produto
             installments: 10, //numero de pareclas
-            percentage: 15.6, //porcentagem
+            percentage: 16, //porcentagem
         }
     })
 
