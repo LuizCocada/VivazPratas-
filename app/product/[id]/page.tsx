@@ -148,7 +148,7 @@ Aguardo retorno para finalizar! Obrigado!
                             href={`https://wa.me/5585994517813?text=${encodeURIComponent(
                                 ringSize ? messageWithRingSizeWhatsApp : messageNoRingSizeWhatsApp
                             )}`}
-                            // target="_blank"
+                            target="_blank"
                         >
                             <Button
                                 disabled={(product.category.id === SolitaryRingCategoryId || product.category.id === parOfRingCategoryId) && !ringSize}
