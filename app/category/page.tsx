@@ -33,7 +33,7 @@ const CategoryPage = async ({ searchParams }: CategoryPageProps) => {
                 </Link>
                 <p className="text-gray-600 text-sm">&nbsp;Início</p>
             </div>
-            <div className="grid grid-cols-2 gap-4 p-5">
+            <div className="grid grid-cols-2 gap-4 p-5 sm:grid-cols-3 md:grid-cols-4">
                 {products.map((product) => (
                     <ProductItem key={product.id} product={product} />
                 ))}

@@ -45,7 +45,7 @@ const ProductPage = async ({ params }: ProductPageParams) => {
             </div>
 
             <div className="p-5">
-                <div className="grid grid-cols-2 gap-4 pt-2">
+                <div className="grid grid-cols-2 gap-4 pt-2 sm:grid-cols-4">
                     {category?.products.map((product) => (
                         <ProductItem key={product.id} product={product} />
                     ))}

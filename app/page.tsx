@@ -19,7 +19,7 @@ const Home = async () => {
           <h2 className="text-3xl font-semibold font-playfairDisplay">CATEGORIAS</h2>
         </div>
 
-        <div className="flex flex-col gap-4 pt-5 font-playfairDisplay">
+        <div className="flex flex-col gap-4 pt-5 font-playfairDisplay sm:grid grid-cols-2 md:grid-cols-3">
           {category.map((category) => (
             <CategoryItem key={category.id} category={category} />
           ))}
