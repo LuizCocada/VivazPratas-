@@ -160,8 +160,8 @@ Aguardo retorno para finalizar! Obrigado!
                     <CardTitle>Mais de {product.category.name}</CardTitle>
                     <div className="flex gap-4 overflow-auto [&::-webkit-scrollbar]:hidden pb-3 sm:grid grid-cols-2 md:grid-cols-4">
                         {relatedProducts.map((product) => (
-                            <div className="w-40 sm:w-full">
-                                <ProductItem key={product.id} product={product} />
+                            <div key={product.id}  className="w-40 sm:w-full">
+                                <ProductItem product={product} />
                             </div>
                         ))}
                     </div>
