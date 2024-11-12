@@ -158,7 +158,7 @@ Aguardo retorno para finalizar! Obrigado!
             <Card>
                 <CardContent className="p-5 space-y-5">
                     <CardTitle>Mais de {product.category.name}</CardTitle>
-                    <div className="flex gap-4 overflow-auto [&::-webkit-scrollbar]:hidden pb-3 sm:grid grid-cols-2 md:grid-cols-4">
+                    <div className="flex gap-2 overflow-auto [&::-webkit-scrollbar]:hidden pb-3 sm:grid grid-cols-2 md:grid-cols-4">
                         {relatedProducts.map((product) => (
                             <div key={product.id}  className="w-40 sm:w-full">
                                 <ProductItem product={product} />
