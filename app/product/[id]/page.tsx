@@ -6,7 +6,7 @@ import { db } from "@/lib/prisma";
 import { ChevronLeftIcon, RulerIcon } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import SelectRingSize from "@/components/SelectRingSize";
+// import SelectRingSize from "@/components/SelectRingSize";
 import { priceWithporcentage } from "@/constants/priceWithPorcentage";
 import NumberOfProducts from "@/components/NumberOfProducts";
 import Decimal from "decimal.js";
@@ -18,7 +18,7 @@ interface ProductItemParams {
         id: string
     },
     searchParams: {
-        ringsize?: string
+        // ringsize?: string
         quantity?: string
     }
 }
@@ -49,26 +49,17 @@ const ProductItemPage = async ({ params, searchParams }: ProductItemParams) => {
         }
     })
 
-    const ringSize = searchParams.ringsize//tamanho do anel 
+    // const ringSize = searchParams.ringsize//tamanho do anel 
     const quantityProducts = searchParams.quantity//quantidade
 
-    const messageWithRingSizeWhatsApp = `
-    Olá, Gabriel, Gostaria de concluir minha compra! 😊
 
-    *Produto*: ${product.name}
-    *visualizar Imagem*: ${product.imageUrl}
-    *Especificações da joia*: ${ringSize}
-    *Quantidade*: Quantidade: ${quantityProducts}
-    
-    Aguardo retorno para finalizar! Obrigado!
-`
 
-    const messageNoRingSizeWhatsApp = `
+    const messageWhatsApp = `
 Olá, Gabriel, Gostaria de concluir minha compra! 😊
 
 *Produto*: ${product.name}
 *visualizar Imagem*: ${product.imageUrl}
-*Quantidade*: Quantidade: ${quantityProducts}
+*Quantidade*: ${quantityProducts}
 
 Aguardo retorno para finalizar! Obrigado!
 `
@@ -77,8 +68,8 @@ Aguardo retorno para finalizar! Obrigado!
     const priceDecimalToString = priceNumber.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
 
 
-    const parOfRingCategoryId = "cm2jsa03p0002b9ohw7i5x88k" //Par de Alianças
-    const SolitaryRingCategoryId = "cm2jsaqxm0003b9ohux2n8aic" //Anéis Solitários
+    // const parOfRingCategoryId = "cm2jsa03p0002b9ohw7i5x88k" //Par de Alianças
+    // const SolitaryRingCategoryId = "cm2jsaqxm0003b9ohux2n8aic" //Anéis Solitários
 
 
 
@@ -132,12 +123,12 @@ Aguardo retorno para finalizar! Obrigado!
                             </Button>
                         </div>
 
-                        {(product.category.id === SolitaryRingCategoryId || product.category.id === parOfRingCategoryId) && (
+                        {/* {(product.category.id === SolitaryRingCategoryId || product.category.id === parOfRingCategoryId) && (
                             <div className="mt-2 space-y-1">
                                 <p className="text-sm font-semibold px-1">Selecione o tamanho do aro*</p>
                                 <SelectRingSize />
                             </div>
-                        )}
+                        )} */}
 
                         <div className="mt-2 space-y-1">
                             <p className="text-sm font-semibold px-1">Quantidade*</p>
@@ -145,13 +136,15 @@ Aguardo retorno para finalizar! Obrigado!
                         </div>
 
                         <Link
-                            href={`https://wa.me/5585994517813?text=${encodeURIComponent(
-                                ringSize ? messageWithRingSizeWhatsApp : messageNoRingSizeWhatsApp
-                            )}`}
+                            // href={`https://wa.me/5585994517813?text=${encodeURIComponent(
+                            //     ringSize ? messageWithRingSizeWhatsApp : messageNoRingSizeWhatsApp
+                            // )}`}
+                            href={`https://wa.me/5585994517813?text=${encodeURIComponent(messageWhatsApp)}`}
                             target="_blank"
                         >
                             <Button
-                                disabled={(product.category.id === SolitaryRingCategoryId || product.category.id === parOfRingCategoryId) && !ringSize}
+                                // disabled={(product.category.id === SolitaryRingCategoryId || product.category.id === parOfRingCategoryId) && !ringSize}
+                                disabled={!quantityProducts || quantityProducts === '0'}
                                 className="rounded-lg mt-5 w-full p-5 py-6 text-lg font-semibold"
                             >
                                 Comprar
@@ -165,9 +158,11 @@ Aguardo retorno para finalizar! Obrigado!
             <Card>
                 <CardContent className="p-5 space-y-5">
                     <CardTitle>Mais de {product.category.name}</CardTitle>
-                    <div className="flex gap-4 overflow-auto pb-3 md:grid grid-cols-4">
+                    <div className="flex gap-4 overflow-auto [&::-webkit-scrollbar]:hidden pb-3 sm:grid grid-cols-2 md:grid-cols-4">
                         {relatedProducts.map((product) => (
-                            <ProductItem key={product.id} product={product} />
+                            <div className="w-40 sm:w-full">
+                                <ProductItem key={product.id} product={product} />
+                            </div>
                         ))}
                     </div>
                 </CardContent>

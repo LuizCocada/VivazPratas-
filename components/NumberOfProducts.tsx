@@ -10,7 +10,7 @@ interface CounterProps {
     maxValue?: number;
 }
 
-const NumberOfProducts: React.FC<CounterProps> = ({ minValue = 1, maxValue = 10 }) => {
+const NumberOfProducts: React.FC<CounterProps> = ({ minValue = 0, maxValue = 10 }) => {
 
     const router = useRouter()
 
