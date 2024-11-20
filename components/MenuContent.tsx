@@ -19,7 +19,6 @@ const MenuContent = async () => {
             </SheetHeader>
 
             <div className="px-5 py-3 flex flex-col gap-7 flex-1">
-
                 {categorys.map((category) => (
                     <MenuCategoryItem key={category.id} category={category} />
                 ))}
