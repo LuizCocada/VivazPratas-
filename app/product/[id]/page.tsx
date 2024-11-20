@@ -117,9 +117,11 @@ Aguardo retorno para finalizar! Obrigado!
                                 <p>Em até 10x de R${priceWithpercentagePerInstallment}</p>
                             </div>
 
-                            <Button className="rounded-md flex gap-2 items-center">
-                                <RulerIcon />
-                                <p className="font-semibold">Medidas</p>
+                            <Button className="rounded-md flex gap-2 items-center" asChild>
+                                <a href="https://youtu.be/yqmOUorygEw" target="_blank">
+                                    <RulerIcon />
+                                    <p className="font-semibold">Medidas</p>
+                                </a>
                             </Button>
                         </div>
 
@@ -160,7 +162,7 @@ Aguardo retorno para finalizar! Obrigado!
                     <CardTitle>Mais de {product.category.name}</CardTitle>
                     <div className="flex gap-2 overflow-auto [&::-webkit-scrollbar]:hidden pb-3 sm:grid grid-cols-2 md:grid-cols-4">
                         {relatedProducts.map((product) => (
-                            <div key={product.id}  className="w-40 sm:w-full">
+                            <div key={product.id} className="w-40 sm:w-full">
                                 <ProductItem product={product} />
                             </div>
                         ))}
