@@ -14,7 +14,7 @@ const MenuContent = async () => {
             <SheetHeader className="border-b p-5">
                 {/* Logo foto vivaz */}
                 <SheetTitle className="text-left">
-                    LogoVivaz
+                    Vivaz Pratas
                 </SheetTitle>
             </SheetHeader>
 
