@@ -10,5 +10,7 @@ export const deleteCategory = async (categoryId: string) => {
             id: categoryId
         }
     })
-    revalidatePath('/admin/delete_category')
+    revalidatePath("/admin/create_category")
+  revalidatePath("/admin/delete_category")//pode quebrar a aplicação
+  revalidatePath("/")
 }

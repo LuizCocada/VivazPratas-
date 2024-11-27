@@ -26,4 +26,5 @@ export const createCategory = async (params: CreateCategoryParams) => {
   })
   revalidatePath("/admin/create_category")
   revalidatePath("/admin/delete_category")//pode quebrar a aplicação
+  revalidatePath("/")
 };
