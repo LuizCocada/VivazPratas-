@@ -28,7 +28,6 @@ const Add_productActionPage = ({ params }: add_productActionPageParams) => {
 
     const handleAddProduct = async (e: React.FormEvent) => {
         e.preventDefault();
-
         try {
             await addProduct({
                 categoryId: params.id,
